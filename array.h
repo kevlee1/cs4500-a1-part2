@@ -24,7 +24,8 @@ class Array : public Object {
         // removes the object at index "i"
         Object* remove(size_t i) {}
         // returns the index of the object in "list"
-        // if the object is not in the list will return -1
+        // if the object is not in the list will return a number greater than
+        // the length of the array
         size_t index_of(Object* o) {}
         // returns the hash value representing the array
         size_t hash() {}
