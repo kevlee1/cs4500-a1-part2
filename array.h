@@ -12,9 +12,7 @@ class Array : public Object {
         // constructor
         Array() {}
         // copy constructor
-        Array(size_t len, Array* a) {}
-        // constructor initializing an array
-        Array(size_t len) {}
+        Array(Array* a) {}
         // destructor
         ~Array() {}
         // returns the length of the array
