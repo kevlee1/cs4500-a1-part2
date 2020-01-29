@@ -1,7 +1,9 @@
 //lang::CwC
 // test file for assignment 1 - part 2
 // maintained by <lee.kev@husky.neu.edu, vullo.b@husky.neu.edu>
-
+#include <stdio.h>
+#include "array.h"
+#include "string.h"
 void FAIL() {
     exit(1);
 }
