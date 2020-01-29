@@ -4,11 +4,6 @@
 
 class Array : public Object {
     public:
-        // fields for Array
-        // length represents how many objects are in the array
-        size_t length;
-        // list represents the array itself
-        Object* list;
         // constructor
         Array() {}
         // copy constructor
