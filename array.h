@@ -1,6 +1,9 @@
 //lang::CwC
 // array class for assignment 1 - part 2
 // maintained by <lee.kev@husky.neu.edu, vullo.b@husky.neu.edu>
+#pragma once
+#include <stdio.h>
+#include "object.h"
 
 class Array : public Object {
     public:
