@@ -77,9 +77,39 @@ void test3() {
     t_true(a->size() == 1);
     OK("TEST 3");
 }
+void test4() {
+    Array* a = new Array();
+    Array* b = new Array();
+    Array* c = new Array();
+    int x = 10;
+    int y = 9;
+    bool t = true;
+    bool f = false;
+    bool t1 = true;
+    bool f1 = false;
+    float u = 1.0;
+    float r = 2.0;
+    float s = 3.0;
+    
+    a->push_back(x);
+    a->add(1, y);
+    t_true(a->get(0)->equals(x));
+    t_true(a->index_of(y) == 1);
+
+    b->push_back(t);
+    b->add(1, f);
+    t_true(b->get(0)->equals(t));
+    t_true(b->index_of(f) == 1);
+
+    c->push_back(u);
+    c->add(1, r);
+    t_true(c->get(0)->equals(u));
+    t_true(c->index_of(r) == 1);
+}
 int main() {
     test1();
     test2();
     test3();
+    test4();
     return 0;
 }
