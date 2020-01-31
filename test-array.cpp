@@ -105,11 +105,29 @@ void test4() {
     c->add(1, r);
     t_true(c->get(0)->equals(u));
     t_true(c->index_of(r) == 1);
+    OK("TEST 4");
+}
+void test5() {
+    Object* o1 = new Object();
+    Object* o2 = new Object();
+    Object* o3 = new Object();
+    Array* a = new Array();
+    a->push_back(o1);
+    a->push_back(o2);
+    t_true(a->get(0)->equals(o1));
+    t_true(a->get(1)->equals(o2));
+    t_true(a->length() == 2); 
+    a->set(o3, 0);
+    t_true(a->get(0)->equals(o3));
+    a->clear();
+    t_true(a->length() == 0);
+    OK("TEST 5");
 }
 int main() {
     test1();
     test2();
     test3();
     test4();
+    test5();
     return 0;
 }
