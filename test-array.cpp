@@ -85,11 +85,8 @@ void test4() {
     int y = 9;
     bool t = true;
     bool f = false;
-    bool t1 = true;
-    bool f1 = false;
     float u = 1.0;
     float r = 2.0;
-    float s = 3.0;
     
     a->push_back(x);
     a->add(1, y);
