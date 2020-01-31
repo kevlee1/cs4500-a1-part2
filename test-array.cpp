@@ -78,30 +78,41 @@ void test3() {
     OK("TEST 3");
 }
 void test4() {
-    Array* a = new Array();
-    Array* b = new Array();
-    Array* c = new Array();
-    int x = 10;
-    int y = 9;
-    bool t = true;
-    bool f = false;
-    float u = 1.0;
-    float r = 2.0;
-    
+    Array* a = new Array(10);
+    Array* b = new Array(10);
+    Array* c = new Array(10);
+    Array* d = new Array(10);
+    Integer* x = new Integer(10);
+    Integer* y = new Integer(9);
+    Bool* t = new Bool(true);
+    Bool* f = new Bool(false);
+    Float* u = new Float(1.0);
+    Float* r = new Float(2.0);
+
     a->push_back(x);
     a->add(1, y);
     t_true(a->get(0)->equals(x));
-    t_true(a->index_of(y) == 1);
+    t_true(a->get(1)->equals(y));
 
     b->push_back(t);
     b->add(1, f);
     t_true(b->get(0)->equals(t));
-    t_true(b->index_of(f) == 1);
+    t_true(b->get(1)->equals(f));
 
     c->push_back(u);
     c->add(1, r);
     t_true(c->get(0)->equals(u));
-    t_true(c->index_of(r) == 1);
+    t_true(c->get(1)->equals(r));
+    c->set(1, u);
+    t_true(c->get(1)->equals(u));
+    
+    d->push_back(x);
+    d->add(1, y);
+
+    t_false(a->equals(c));
+    t_true(a->equals(d));
+
+    t_true(d->size() == 2);
     OK("TEST 4");
 }
 void test5() {
@@ -113,11 +124,11 @@ void test5() {
     a->push_back(o2);
     t_true(a->get(0)->equals(o1));
     t_true(a->get(1)->equals(o2));
-    t_true(a->length() == 2); 
+    t_true(a->size() == 2); 
     a->set(o3, 0);
     t_true(a->get(0)->equals(o3));
     a->clear();
-    t_true(a->length() == 0);
+    t_true(a->size() == 0);
     OK("TEST 5");
 }
 int main() {
